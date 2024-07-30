@@ -5,6 +5,7 @@ import SearchInput from "./search/SearchInput";
 import { setNotificationNav } from "../../store/reducers/NotificationNav/NotiFicationnav";
 import { useDispatch, useSelector } from "react-redux";
 import CloseIcon from "@mui/icons-material/Close";
+import { Link } from "react-router-dom";
 
 function TitleBar() {
   const dispatch = useDispatch();
@@ -26,26 +27,28 @@ function TitleBar() {
         <Brightness7Icon />
         {steData ? (
           <button
-          onClick={() => {
-            NotiBtn();
-          }}
-        >
-          <NotificationsNoneIcon />
-    </button>
+            onClick={() => {
+              NotiBtn();
+            }}
+          >
+            <NotificationsNoneIcon />
+          </button>
         ) : (
-         
-       <button onClick={() => {
-        NotiBtn();
-      }}>
-
-        <CloseIcon />
-      </button>
+          <button
+            onClick={() => {
+              NotiBtn();
+            }}
+          >
+            <CloseIcon />
+          </button>
         )}
         <span className=" w-7 h-7 rounded-full bg-red-600 overflow-hidden">
-          <img
-            src="https://i.pinimg.com/736x/76/f3/f3/76f3f3007969fd3b6db21c744e1ef289.jpg"
-            alt=""
-          />{" "}
+          <Link to="/admin">
+            <img
+              src="https://i.pinimg.com/736x/76/f3/f3/76f3f3007969fd3b6db21c744e1ef289.jpg"
+              alt=""
+            />{" "}
+          </Link>
         </span>
       </div>
     </div>
